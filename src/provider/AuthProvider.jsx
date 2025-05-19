@@ -49,7 +49,7 @@ const AuthProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, currentUser => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
       setLoading(false);
     });
@@ -63,7 +63,6 @@ const AuthProvider = ({ children }) => {
     user,
     logOut,
     updateUser,
-    loading,
     googleSignIn,
     loading,
     setLoading,

@@ -2,14 +2,7 @@ import { useState, useEffect, useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 import toast from "react-hot-toast";
-import {
-  Avatar,
-  Button,
-  Dropdown,
-  Navbar,
-  DarkThemeToggle,
-  Tooltip,
-} from "flowbite-react";
+import { Avatar, Button, Dropdown, Navbar, Tooltip } from "flowbite-react";
 import { FiSun, FiMoon, FiPlus, FiList, FiBriefcase } from "react-icons/fi";
 
 const Header = () => {
@@ -43,7 +36,7 @@ const Header = () => {
   };
 
   return (
-    <header className="bg-white dark:bg-gray-800 sticky top-0 shadow-sm z-50 border-b border-gray-200 dark:border-gray-700">
+    <header className="backdrop-blur-lg dark:bg-gray-800 sticky top-0 shadow-sm z-50  dark:border-gray-700">
       <nav className="container mx-auto px-4">
         <Navbar fluid rounded className="bg-transparent dark:bg-gray-800 py-4">
           <Navbar.Brand as={Link} to="/" className="flex items-center">
@@ -87,6 +80,14 @@ const Header = () => {
                   </span>
                 </Dropdown.Header>
 
+                <Link to="/profile">
+                  <Dropdown.Item
+                    icon={FiPlus}
+                    className="dark:hover:bg-gray-600"
+                  >
+                    Profile
+                  </Dropdown.Item>
+                </Link>
                 <Link to="/add-visa">
                   <Dropdown.Item
                     icon={FiPlus}
